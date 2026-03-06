@@ -27,7 +27,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CoreScale - Affordable Professional Websites for Small Businesses",    description: "Get a professional website for your small business starting at $250. Build trust, attract customers, and grow online with CoreScale.",    type: "website",    siteName: "CoreScale",    images: [
       {
-        url: "http://img.b2bpic.net/free-photo/joyous-coworkers-having-fun-vibrant-office-while-reviewing-financial-graphs_482257-126650.jpg",        alt: "Professional website design for small businesses"},
+        url: "http://img.b2bpic.net/free-photo/joyous-coworkers-having-fun-vibrant-office-while-reviewing-financial-graphs_482257-126650.jpg",        alt: "Professional website design for small businesses"
+      },
     ],
   },
   twitter: {
