@@ -9,7 +9,7 @@ import FeatureCardThree from "@/components/sections/feature/featureCardThree/Fea
 import TestimonialCardOne from "@/components/sections/testimonial/TestimonialCardOne";
 import ContactFaq from "@/components/sections/contact/ContactFaq";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
-import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Star } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -32,6 +32,7 @@ export default function LandingPage() {
             { name: "About", id: "about" },
             { name: "Services", id: "services" },
             { name: "Why We Matter", id: "why-matters" },
+            { name: "Testimonials", id: "testimonials" },
             { name: "Contact", id: "contact" },
           ]}
           button={{
@@ -64,9 +65,7 @@ export default function LandingPage() {
           title="Why CoreScale?"
           description={[
             "Most customers search online before visiting or contacting a business. Without a website, your business is missing valuable opportunities to connect with potential customers.",            "CoreScale specializes in helping small businesses get online quickly and affordably. We create professional websites that help businesses look credible, showcase their services, and build lasting customer relationships.",            "We focus on clean design, fast performance, and mobile-friendly layouts that work perfectly on any device. Your website will be a powerful tool to attract new customers and establish trust in your market."]}
-          buttons={[
-            { text: "Start Your Journey", href: "contact" },
-          ]}
+          buttons={[{ text: "Start Your Journey", href: "contact" }]}
           buttonAnimation="blur-reveal"
           showBorder={false}
           useInvertedBackground={false}
@@ -129,7 +128,7 @@ export default function LandingPage() {
       <div id="testimonials" data-section="testimonials">
         <TestimonialCardOne
           title="What Our Clients Say"
-          description="Real feedback from small business owners who've grown their online presence with CoreScale"
+          description="Real feedback from small business owners who've grown their online presence with CoreScale. With star ratings and detailed reviews, see why our clients trust us."
           tag="Client Success"
           tagAnimation="slide-up"
           textboxLayout="default"
