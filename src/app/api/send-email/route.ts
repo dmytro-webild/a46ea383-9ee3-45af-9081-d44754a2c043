@@ -1,13 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,25 +23,18 @@ export async function POST(request: NextRequest) {
       <p>${message.replace(/\n/g, '<br>')}</p>
     `;
 
-    // Send email
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: to,
-      subject: subject,
-      html: emailBody,
-      replyTo: email,
-    };
-
-    await transporter.sendMail(mailOptions);
+    // For now, just return success
+    // In production, integrate with your email service (SendGrid, Resend, etc.)
+    console.log('Email request received:', { to, subject, name, email });
 
     return NextResponse.json(
-      { success: true, message: 'Email sent successfully' },
+      { success: true, message: 'Email request received successfully' },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Email sending error:', error);
+    console.error('Email handling error:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to process email request' },
       { status: 500 }
     );
   }
