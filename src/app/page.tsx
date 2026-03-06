@@ -30,18 +30,17 @@ export default function LandingPage() {
     setError("");
 
     try {
-      // Send email using Formspree
-      const response = await fetch("https://formspree.io/f/mpwazqqq", {
+      // Send email using EmailJS or direct backend call
+      const response = await fetch("/api/send-email", {
         method: "POST",        headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name: formData.fullName,
+          to: "CoreScale.co@gmail.com",          subject: "New Website Request – CoreScale",          name: formData.fullName,
           email: formData.email,
           businessName: formData.businessName,
           phone: formData.phone,
-          message: formData.message,
-          _subject: "New Website Request – CoreScale",          _reply_to: formData.email
+          message: formData.message
         })
       });
 
