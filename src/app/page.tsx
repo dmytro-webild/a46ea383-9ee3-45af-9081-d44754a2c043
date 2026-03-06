@@ -170,16 +170,6 @@ export default function LandingPage() {
               id: "6",              title: "Do you provide support after launch?",              content: "Yes! We offer ongoing support through our Website Maintenance & Edits service ($50/month). We can handle updates, improvements, and technical support to keep your site running smoothly."
             },
           ]}
-          contactInfo={[
-            {
-              icon: Phone,
-              text: "206-741-9017",              onClick: handlePhoneClick
-            },
-            {
-              icon: Mail,
-              text: "CoreScale.co@gmail.com",              onClick: handleEmailClick
-            }
-          ]}
         />
       </div>
 
