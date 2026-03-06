@@ -36,7 +36,8 @@ export default function LandingPage() {
             { name: "Contact", id: "contact" },
           ]}
           button={{
-            text: "Get Your Website Today",            href: "contact"}}
+            text: "Get Your Website Today",            href: "contact"
+          }}
           animateOnLoad={true}
         />
       </div>
@@ -64,7 +65,8 @@ export default function LandingPage() {
         <TextSplitAbout
           title="Why CoreScale?"
           description={[
-            "Most customers search online before visiting or contacting a business. Without a website, your business is missing valuable opportunities to connect with potential customers.",            "CoreScale specializes in helping small businesses get online quickly and affordably. We create professional websites that help businesses look credible, showcase their services, and build lasting customer relationships.",            "We focus on clean design, fast performance, and mobile-friendly layouts that work perfectly on any device. Your website will be a powerful tool to attract new customers and establish trust in your market."]}
+            "Most customers search online before visiting or contacting a business. Without a website, your business is missing valuable opportunities to connect with potential customers.",            "CoreScale specializes in helping small businesses get online quickly and affordably. We create professional websites that help businesses look credible, showcase their services, and build lasting customer relationships.",            "We focus on clean design, fast performance, and mobile-friendly layouts that work perfectly on any device. Your website will be a powerful tool to attract new customers and establish trust in your market."
+          ]}
           buttons={[{ text: "Start Your Journey", href: "contact" }]}
           buttonAnimation="blur-reveal"
           showBorder={false}
@@ -89,7 +91,8 @@ export default function LandingPage() {
                 { text: "Learn More", href: "#" },
               ],
               features: [
-                "Professional modern design",                "Mobile-friendly layout",                "Fast loading pages",                "Clean and simple user experience",                "Website that builds trust with customers"],
+                "Professional modern design",                "Mobile-friendly layout",                "Fast loading pages",                "Clean and simple user experience",                "Website that builds trust with customers"
+              ],
             },
             {
               id: "2",              badge: "Maintenance & Edits",              badgeIcon: CheckCircle,
@@ -98,7 +101,8 @@ export default function LandingPage() {
                 { text: "Learn More", href: "#" },
               ],
               features: [
-                "Website updates and content edits",                "Image or text updates",                "Small design improvements",                "Ongoing technical support",                "Keep your website running smoothly"],
+                "Website updates and content edits",                "Image or text updates",                "Small design improvements",                "Ongoing technical support",                "Keep your website running smoothly"
+              ],
             },
           ]}
         />
@@ -116,11 +120,14 @@ export default function LandingPage() {
           gridVariant="three-columns-all-equal-width"
           features={[
             {
-              id: "01",              title: "Build Trust & Credibility",              description: "A professional website shows customers that you're legitimate and serious about your business. It's often the first impression customers have of your company.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Professional website design"},
+              id: "01",              title: "Build Trust & Credibility",              description: "A professional website shows customers that you're legitimate and serious about your business. It's often the first impression customers have of your company.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Professional website design"
+            },
             {
-              id: "02",              title: "Attract More Customers",              description: "When customers search online for services you offer, a well-designed website helps them find you. Don't miss out on valuable business opportunities.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Customer attraction through online presence"},
+              id: "02",              title: "Attract More Customers",              description: "When customers search online for services you offer, a well-designed website helps them find you. Don't miss out on valuable business opportunities.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Customer attraction through online presence"
+            },
             {
-              id: "03",              title: "Stand Out from Competitors",              description: "Many local businesses still don't have websites. By getting online with CoreScale, you'll have a competitive advantage and reach customers your competitors are missing.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Competitive advantage online"},
+              id: "03",              title: "Stand Out from Competitors",              description: "Many local businesses still don't have websites. By getting online with CoreScale, you'll have a competitive advantage and reach customers your competitors are missing.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Competitive advantage online"
+            },
           ]}
         />
       </div>
@@ -139,16 +146,20 @@ export default function LandingPage() {
           testimonials={[
             {
               id: "1",              name: "Sarah Mitchell",              role: "Owner",              company: "Mitchell's Cleaning Services",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=1",              imageAlt: "Sarah Mitchell"},
+              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=1",              imageAlt: "Sarah Mitchell"
+            },
             {
               id: "2",              name: "David Chen",              role: "Founder",              company: "Chen's Local Plumbing",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=2",              imageAlt: "David Chen"},
+              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=2",              imageAlt: "David Chen"
+            },
             {
               id: "3",              name: "Jennifer Rodriguez",              role: "Owner",              company: "Rodriguez Photography Studio",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=3",              imageAlt: "Jennifer Rodriguez"},
+              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=3",              imageAlt: "Jennifer Rodriguez"
+            },
             {
               id: "4",              name: "Marcus Thompson",              role: "Owner",              company: "Thompson's Landscaping",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=4",              imageAlt: "Marcus Thompson"},
+              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=4",              imageAlt: "Marcus Thompson"
+            },
           ]}
         />
       </div>
@@ -158,7 +169,8 @@ export default function LandingPage() {
           ctaTitle="Ready to Get Your Website?"
           ctaDescription="Contact CoreScale today and let's discuss how we can help your business grow online. We're ready to answer your questions and get you started."
           ctaButton={{
-            text: "Contact Us Now",            href: "mailto:CoreScale.co@gmail.com"}}
+            text: "Contact Us Now",            href: "mailto:CoreScale.co@gmail.com"
+          }}
           ctaIcon={ArrowRight}
           useInvertedBackground={false}
           animationType="slide-up"
@@ -166,17 +178,23 @@ export default function LandingPage() {
           showCard={true}
           faqs={[
             {
-              id: "1",              title: "How much does a website cost?",              content: "Website design starts at $250. This includes professional modern design, mobile-friendly layout, fast loading pages, and everything needed to build customer trust. We also offer ongoing maintenance for $50/month."},
+              id: "1",              title: "How much does a website cost?",              content: "Website design starts at $250. This includes professional modern design, mobile-friendly layout, fast loading pages, and everything needed to build customer trust. We also offer ongoing maintenance for $50/month."
+            },
             {
-              id: "2",              title: "How long does it take to get a website?",              content: "We work efficiently to get your website live quickly. Most projects are completed within 2-3 weeks, depending on complexity and how quickly you provide content and feedback."},
+              id: "2",              title: "How long does it take to get a website?",              content: "It can take up to 1-2 weeks depending on the complexity and how quickly you provide content and feedback. We work efficiently to get your website live as soon as possible."
+            },
             {
-              id: "3",              title: "Will my website work on mobile phones?",              content: "Absolutely! All CoreScale websites are mobile-friendly and responsive. They look and work perfectly on smartphones, tablets, and desktop computers."},
+              id: "3",              title: "Will my website work on mobile phones?",              content: "Absolutely! All CoreScale websites are mobile-friendly and responsive. They look and work perfectly on smartphones, tablets, and desktop computers."
+            },
             {
-              id: "4",              title: "Can I update my website myself?",              content: "Yes! We design websites that are easy to manage. We can train you on how to make updates, or we offer monthly maintenance packages to handle updates for you."},
+              id: "4",              title: "Can I update my website myself?",              content: "Yes! We design websites that are easy to manage. We can train you on how to make updates, or we offer monthly maintenance packages to handle updates for you."
+            },
             {
-              id: "5",              title: "What if I already have a website?",              content: "If your current website is outdated or not performing well, we can redesign it with modern design and better functionality. Let's discuss your needs!"},
+              id: "5",              title: "What if I already have a website?",              content: "If your current website is outdated or not performing well, we can redesign it with modern design and better functionality. Let's discuss your needs!"
+            },
             {
-              id: "6",              title: "Do you provide support after launch?",              content: "Yes! We offer ongoing support through our Website Maintenance & Edits service ($50/month). We can handle updates, improvements, and technical support to keep your site running smoothly."},
+              id: "6",              title: "Do you provide support after launch?",              content: "Yes! We offer ongoing support through our Website Maintenance & Edits service ($50/month). We can handle updates, improvements, and technical support to keep your site running smoothly."
+            },
           ]}
         />
       </div>
@@ -185,9 +203,11 @@ export default function LandingPage() {
         <FooterLogoReveal
           logoText="CoreScale"
           leftLink={{
-            text: "Privacy Policy",            href: "#"}}
+            text: "Privacy Policy",            href: "#"
+          }}
           rightLink={{
-            text: "Terms of Service",            href: "#"}}
+            text: "Terms of Service",            href: "#"
+          }}
         />
       </div>
     </ThemeProvider>
