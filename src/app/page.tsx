@@ -8,9 +8,17 @@ import PricingCardTwo from "@/components/sections/pricing/PricingCardTwo";
 import FeatureCardThree from "@/components/sections/feature/featureCardThree/FeatureCardThree";
 import ContactFaq from "@/components/sections/contact/ContactFaq";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
-import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Phone, Mail } from "lucide-react";
 
 export default function LandingPage() {
+  const handlePhoneClick = () => {
+    window.location.href = "tel:206-741-9017";
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:CoreScale.co@gmail.com";
+  };
+
   return (
     <ThemeProvider
       defaultButtonVariant="directional-hover"
@@ -135,9 +143,9 @@ export default function LandingPage() {
           ctaTitle="Ready to Get Your Website?"
           ctaDescription="Contact CoreScale today and let's discuss how we can help your business grow online. We're ready to answer your questions and get you started."
           ctaButton={{
-            text: "Contact Us Now",            href: "mailto:CoreScale.co@gmail.com"
+            text: "Contact Us Now",            onClick: handlePhoneClick
           }}
-          ctaIcon={ArrowRight}
+          ctaIcon={Phone}
           useInvertedBackground={false}
           animationType="slide-up"
           accordionAnimationType="smooth"
@@ -161,6 +169,16 @@ export default function LandingPage() {
             {
               id: "6",              title: "Do you provide support after launch?",              content: "Yes! We offer ongoing support through our Website Maintenance & Edits service ($50/month). We can handle updates, improvements, and technical support to keep your site running smoothly."
             },
+          ]}
+          contactInfo={[
+            {
+              icon: Phone,
+              text: "206-741-9017",              onClick: handlePhoneClick
+            },
+            {
+              icon: Mail,
+              text: "CoreScale.co@gmail.com",              onClick: handleEmailClick
+            }
           ]}
         />
       </div>
