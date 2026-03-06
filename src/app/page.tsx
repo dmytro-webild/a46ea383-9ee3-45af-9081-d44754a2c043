@@ -84,7 +84,7 @@ export default function LandingPage() {
           plans={[
             {
               id: "1",              badge: "Website Design",              badgeIcon: Sparkles,
-              price: "Starting at $250",              subtitle: "Perfect for your first website or redesign",              buttons: [
+              price: "Starting at $250",              subtitle: "Pay after the website is completed. Perfect for your first website or redesign",              buttons: [
                 { text: "Get Started", href: "contact" },
                 { text: "Learn More", href: "#" },
               ],
@@ -144,7 +144,7 @@ export default function LandingPage() {
           showCard={true}
           faqs={[
             {
-              id: "1",              title: "How much does a website cost?",              content: "Website design starts at $250. This includes professional modern design, mobile-friendly layout, fast loading pages, and everything needed to build customer trust. We also offer ongoing maintenance for $50/month."
+              id: "1",              title: "How much does a website cost?",              content: "Website design starts at $250, and you pay after the website is completed. This includes professional modern design, mobile-friendly layout, fast loading pages, and everything needed to build customer trust. We also offer ongoing maintenance for $50/month."
             },
             {
               id: "2",              title: "How long does it take to get a website?",              content: "It can take up to 1-2 weeks depending on the complexity and how quickly you provide content and feedback. We work efficiently to get your website live as soon as possible."
