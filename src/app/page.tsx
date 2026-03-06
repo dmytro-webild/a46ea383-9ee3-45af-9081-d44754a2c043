@@ -84,7 +84,7 @@ export default function LandingPage() {
           plans={[
             {
               id: "1",              badge: "Website Design",              badgeIcon: Sparkles,
-              price: "Starting at $250",              subtitle: "Pay after the website is completed. Perfect for your first website or redesign",              buttons: [
+              price: "Starting at $250",              subtitle: "Professional website starting at $250 built to help your business attract more customers online",              buttons: [
                 { text: "Get Started", href: "contact" },
                 { text: "Learn More", href: "#" },
               ],
