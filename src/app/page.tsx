@@ -6,7 +6,6 @@ import HeroOverlay from "@/components/sections/hero/HeroOverlay";
 import TextSplitAbout from "@/components/sections/about/TextSplitAbout";
 import PricingCardTwo from "@/components/sections/pricing/PricingCardTwo";
 import FeatureCardThree from "@/components/sections/feature/featureCardThree/FeatureCardThree";
-import ContactFaq from "@/components/sections/contact/ContactFaq";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
 import { ArrowRight, CheckCircle, Sparkles, Phone, Mail } from "lucide-react";
 import { useState } from "react";
@@ -32,7 +31,9 @@ export default function LandingPage() {
     setTimeout(() => setSubmitted(false), 5000);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -62,8 +63,7 @@ export default function LandingPage() {
             { name: "Contact", id: "contact" },
           ]}
           button={{
-            text: "Get Your Website Today",            href: "contact"
-          }}
+            text: "Get Your Website Today",            href: "contact"}}
           animateOnLoad={true}
         />
       </div>
@@ -91,8 +91,7 @@ export default function LandingPage() {
         <TextSplitAbout
           title="Why CoreScale?"
           description={[
-            "Most customers search online before visiting or contacting a business. Without a website, your business is missing valuable opportunities to connect with potential customers.",            "CoreScale specializes in helping small businesses get online quickly and affordably. We create professional websites that help businesses look credible, showcase their services, and build lasting customer relationships.",            "We focus on clean design, fast performance, and mobile-friendly layouts that work perfectly on any device. Your website will be a powerful tool to attract new customers and establish trust in your market."
-          ]}
+            "Most customers search online before visiting or contacting a business. Without a website, your business is missing valuable opportunities to connect with potential customers.",            "CoreScale specializes in helping small businesses get online quickly and affordably. We create professional websites that help businesses look credible, showcase their services, and build lasting customer relationships.",            "We focus on clean design, fast performance, and mobile-friendly layouts that work perfectly on any device. Your website will be a powerful tool to attract new customers and establish trust in your market."]}
           buttons={[{ text: "Start Your Journey", href: "contact" }]}
           buttonAnimation="blur-reveal"
           showBorder={false}
@@ -117,8 +116,7 @@ export default function LandingPage() {
                 { text: "Learn More", href: "#" },
               ],
               features: [
-                "Professional modern design",                "Mobile-friendly layout",                "Fast loading pages",                "Clean and simple user experience",                "Website that builds trust with customers"
-              ],
+                "Professional modern design",                "Mobile-friendly layout",                "Fast loading pages",                "Clean and simple user experience",                "Website that builds trust with customers"],
             },
             {
               id: "2",              badge: "Maintenance & Edits",              badgeIcon: CheckCircle,
@@ -127,8 +125,7 @@ export default function LandingPage() {
                 { text: "Learn More", href: "#" },
               ],
               features: [
-                "Website updates and content edits",                "Image or text updates",                "Small design improvements",                "Ongoing technical support",                "Keep your website running smoothly"
-              ],
+                "Website updates and content edits",                "Image or text updates",                "Small design improvements",                "Ongoing technical support",                "Keep your website running smoothly"],
             },
           ]}
         />
@@ -146,14 +143,11 @@ export default function LandingPage() {
           gridVariant="three-columns-all-equal-width"
           features={[
             {
-              id: "01",              title: "Build Trust & Credibility",              description: "A professional website shows customers that you're legitimate and serious about your business. It's often the first impression customers have of your company.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Professional website design"
-            },
+              id: "01",              title: "Build Trust & Credibility",              description: "A professional website shows customers that you're legitimate and serious about your business. It's often the first impression customers have of your company.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Professional website design"},
             {
-              id: "02",              title: "Attract More Customers",              description: "When customers search online for services you offer, a well-designed website helps them find you. Don't miss out on valuable business opportunities.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Customer attraction through online presence"
-            },
+              id: "02",              title: "Attract More Customers",              description: "When customers search online for services you offer, a well-designed website helps them find you. Don't miss out on valuable business opportunities.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Customer attraction through online presence"},
             {
-              id: "03",              title: "Stand Out from Competitors",              description: "Many local businesses still don't have websites. By getting online with CoreScale, you'll have a competitive advantage and reach customers your competitors are missing.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Competitive advantage online"
-            },
+              id: "03",              title: "Stand Out from Competitors",              description: "Many local businesses still don't have websites. By getting online with CoreScale, you'll have a competitive advantage and reach customers your competitors are missing.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Competitive advantage online"},
           ]}
         />
       </div>
@@ -204,7 +198,10 @@ export default function LandingPage() {
               <form onSubmit={handleFormSubmit} className="bg-card p-8 rounded-lg">
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="fullName"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Full Name
                     </label>
                     <input
@@ -219,7 +216,10 @@ export default function LandingPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="businessName" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="businessName"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Business Name
                     </label>
                     <input
@@ -237,7 +237,10 @@ export default function LandingPage() {
 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Email Address
                     </label>
                     <input
@@ -252,7 +255,10 @@ export default function LandingPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -269,7 +275,10 @@ export default function LandingPage() {
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -309,11 +318,9 @@ export default function LandingPage() {
         <FooterLogoReveal
           logoText="CoreScale"
           leftLink={{
-            text: "Privacy Policy",            href: "#"
-          }}
+            text: "Privacy Policy",            href: "#"}}
           rightLink={{
-            text: "Terms of Service",            href: "#"
-          }}
+            text: "Terms of Service",            href: "#"}}
         />
       </div>
     </ThemeProvider>
