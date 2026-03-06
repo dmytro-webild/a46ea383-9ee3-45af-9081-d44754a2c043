@@ -7,7 +7,8 @@ import "./styles/base.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CoreScale - Professional Websites for Small Businesses",  description: "Affordable professional websites for small and local businesses. Build trust, attract customers, and grow your business online with CoreScale."};
+  title: "CoreScale - Professional Websites for Small Businesses",  description: "Affordable professional websites for small and local businesses. Build trust, attract customers, and grow your business online with CoreScale."
+};
 
 export default function RootLayout({
   children,
