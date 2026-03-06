@@ -15,6 +15,7 @@ export default function LandingPage() {
   const [formData, setFormData] = useState({
     fullName: "",    businessName: "",    email: "",    phone: "",    message: ""
   });
+  const [error, setError] = useState("");
 
   const handlePhoneClick = () => {
     window.location.href = "tel:206-741-9017";
@@ -26,16 +27,10 @@ export default function LandingPage() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Prepare email content
-    const emailBody = `New Website Request from CoreScale Contact Form\n\n${
-      "==".repeat(40)
-    }\n\nFull Name: ${formData.fullName}\nBusiness Name: ${formData.businessName}\nEmail Address: ${formData.email}\nPhone Number: ${formData.phone}\nMessage: ${formData.message}\n\n${
-      "==".repeat(40)
-    }`;
+    setError("");
 
     try {
-      // Send email using Formspree or similar service
+      // Send email using Formspree
       const response = await fetch("https://formspree.io/f/mpwazqqq", {
         method: "POST",        headers: {
           "Content-Type": "application/json"
@@ -46,7 +41,7 @@ export default function LandingPage() {
           businessName: formData.businessName,
           phone: formData.phone,
           message: formData.message,
-          _subject: "New Website Request \u2013 CoreScale",          _reply_to: formData.email
+          _subject: "New Website Request – CoreScale",          _reply_to: formData.email
         })
       });
 
@@ -57,11 +52,11 @@ export default function LandingPage() {
         });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        alert("Failed to send form. Please try again.");
+        setError("Failed to send form. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again.");
+      setError("An error occurred. Please try again.");
     }
   };
 
@@ -237,6 +232,11 @@ export default function LandingPage() {
             {/* Contact Form */}
             {!submitted ? (
               <form onSubmit={handleFormSubmit} className="bg-card p-8 rounded-lg">
+                {error && (
+                  <div className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200">
+                    <p className="text-red-800">{error}</p>
+                  </div>
+                )}
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label
