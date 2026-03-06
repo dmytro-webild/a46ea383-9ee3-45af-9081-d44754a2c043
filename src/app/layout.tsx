@@ -1,55 +1,22 @@
 import type { Metadata } from "next";
-import { Halant } from "next/font/google";
 import { Inter } from "next/font/google";
-import { Public_Sans } from "next/font/google";
 import "./globals.css";
-import { ServiceWrapper } from "@/components/ServiceWrapper";
-import Tag from "@/tag/Tag";
+import "./styles/variables.css";
+import "./styles/base.css";
 
-const halant = Halant({
-  variable: "--font-halant",  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",  subsets: ["latin"],
-});
-
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CoreScale - Professional Websites for Small Businesses",  description: "Affordable, professional web design for small businesses. Build trust online with clean, modern websites starting at $250. CoreScale helps local businesses grow online.",  keywords: "web design, small business, affordable websites, professional website design, local business website, online presence",  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    title: "CoreScale - Affordable Professional Websites for Small Businesses",    description: "Get a professional website for your small business starting at $250. Build trust, attract customers, and grow online with CoreScale.",    type: "website",    siteName: "CoreScale",    images: [
-      {
-        url: "http://img.b2bpic.net/free-photo/joyous-coworkers-having-fun-vibrant-office-while-reviewing-financial-graphs_482257-126650.jpg",        alt: "Professional website design for small businesses"
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",    title: "CoreScale - Professional Websites for Small Businesses",    description: "Affordable, professional web design starting at $250. Build your online presence with CoreScale.",    images: ["http://img.b2bpic.net/free-photo/joyous-coworkers-having-fun-vibrant-office-while-reviewing-financial-graphs_482257-126650.jpg"],
-  },
-};
+  title: "CoreScale - Professional Websites for Small Businesses",  description: "Affordable professional websites for small and local businesses. Build trust, attract customers, and grow your business online with CoreScale."};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <ServiceWrapper>
-        <body
-          className={`${halant.variable} ${inter.variable} ${publicSans.variable} antialiased`}
-        >
-          <Tag />
-          {children}
-        
+    <html lang="en">
+      <body className={inter.className}>{children}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -1417,7 +1384,6 @@ export default function RootLayout({
           }}
         />
       </body>
-      </ServiceWrapper>
     </html>
   );
 }
