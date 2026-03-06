@@ -6,10 +6,9 @@ import HeroOverlay from "@/components/sections/hero/HeroOverlay";
 import TextSplitAbout from "@/components/sections/about/TextSplitAbout";
 import PricingCardTwo from "@/components/sections/pricing/PricingCardTwo";
 import FeatureCardThree from "@/components/sections/feature/featureCardThree/FeatureCardThree";
-import TestimonialCardOne from "@/components/sections/testimonial/TestimonialCardOne";
 import ContactFaq from "@/components/sections/contact/ContactFaq";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
-import { ArrowRight, CheckCircle, Sparkles, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -32,7 +31,6 @@ export default function LandingPage() {
             { name: "About", id: "about" },
             { name: "Services", id: "services" },
             { name: "Why We Matter", id: "why-matters" },
-            { name: "Testimonials", id: "testimonials" },
             { name: "Contact", id: "contact" },
           ]}
           button={{
@@ -127,38 +125,6 @@ export default function LandingPage() {
             },
             {
               id: "03",              title: "Stand Out from Competitors",              description: "Many local businesses still don't have websites. By getting online with CoreScale, you'll have a competitive advantage and reach customers your competitors are missing.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Competitive advantage online"
-            },
-          ]}
-        />
-      </div>
-
-      <div id="testimonials" data-section="testimonials">
-        <TestimonialCardOne
-          title="What Our Clients Say"
-          description="Real feedback from small business owners who've grown their online presence with CoreScale. With star ratings and detailed reviews, see why our clients trust us."
-          tag="Client Success"
-          tagAnimation="slide-up"
-          textboxLayout="default"
-          useInvertedBackground={false}
-          gridVariant="uniform-all-items-equal"
-          animationType="slide-up"
-          carouselMode="buttons"
-          testimonials={[
-            {
-              id: "1",              name: "Sarah Mitchell",              role: "Owner",              company: "Mitchell's Cleaning Services",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=1",              imageAlt: "Sarah Mitchell"
-            },
-            {
-              id: "2",              name: "David Chen",              role: "Founder",              company: "Chen's Local Plumbing",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=2",              imageAlt: "David Chen"
-            },
-            {
-              id: "3",              name: "Jennifer Rodriguez",              role: "Owner",              company: "Rodriguez Photography Studio",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=3",              imageAlt: "Jennifer Rodriguez"
-            },
-            {
-              id: "4",              name: "Marcus Thompson",              role: "Owner",              company: "Thompson's Landscaping",              rating: 5,
-              imageSrc: "http://img.b2bpic.net/free-photo/smiling-homosexual-man-official-suit-looking-camera-close-up-shot-happy-gay-getting-dressed-wedding-ceremony-standing-hotel-room-with-his-partner-background-love-emotion-concept_74855-22675.jpg?_wi=4",              imageAlt: "Marcus Thompson"
             },
           ]}
         />
