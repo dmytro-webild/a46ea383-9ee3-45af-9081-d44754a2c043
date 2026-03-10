@@ -107,7 +107,7 @@ export default function LandingPage() {
           plans={[
             {
               id: "1",              badge: "Starter",              badgeIcon: Sparkles,
-              price: "$19/mo",              subtitle: "Perfect for small businesses getting started",              buttons: [
+              price: "$250",              subtitle: "One-time payment for your website",              buttons: [
                 { text: "Get Started", href: "contact" }
               ],
               features: [
@@ -116,7 +116,7 @@ export default function LandingPage() {
             },
             {
               id: "2",              badge: "Professional",              badgeIcon: CheckCircle,
-              price: "$49/mo",              subtitle: "Best for growing businesses",              buttons: [
+              price: "$50/mo",              subtitle: "Best for managing your website",              buttons: [
                 { text: "Get Started", href: "contact" }
               ],
               features: [
@@ -261,7 +261,7 @@ export default function LandingPage() {
                 type="submit"
                 className="w-full bg-primary-cta hover:bg-primary-cta/90 text-primary-cta-text font-semibold py-3 px-6 rounded-lg transition"
               >
-                Start Free Trial
+                Contact Us
               </button>
             </form>
           </div>
