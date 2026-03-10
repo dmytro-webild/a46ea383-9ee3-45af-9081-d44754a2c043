@@ -7,33 +7,33 @@ import TextSplitAbout from "@/components/sections/about/TextSplitAbout";
 import PricingCardTwo from "@/components/sections/pricing/PricingCardTwo";
 import FeatureCardThree from "@/components/sections/feature/featureCardThree/FeatureCardThree";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
-import { Sparkles, CheckCircle, Phone, Mail, Scissors, Users, Star } from "lucide-react";
+import { Sparkles, CheckCircle, Phone, Mail } from "lucide-react";
 
 export default function LandingPage() {
   return (
     <ThemeProvider
-      defaultButtonVariant="directional-hover"
-      defaultTextAnimation="reveal-blur"
-      borderRadius="pill"
-      contentWidth="smallMedium"
-      sizing="large"
-      background="noiseDiagonalGradient"
-      cardStyle="gradient-mesh"
-      primaryButtonStyle="primary-glow"
-      secondaryButtonStyle="layered"
-      headingFontWeight="extrabold"
+      defaultButtonVariant="hover-magnetic"
+      defaultTextAnimation="entrance-slide"
+      borderRadius="rounded"
+      contentWidth="medium"
+      sizing="medium"
+      background="circleGradient"
+      cardStyle="glass-elevated"
+      primaryButtonStyle="gradient"
+      secondaryButtonStyle="glass"
+      headingFontWeight="bold"
     >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
-          brandName="Nathan's Barbershop"
+          brandName="CoreScale"
           navItems={[
+            { name: "Features", id: "features" },
+            { name: "Pricing", id: "pricing" },
             { name: "About", id: "about" },
-            { name: "Services", id: "services" },
-            { name: "Why Choose Us", id: "why-matters" },
             { name: "Contact", id: "contact" }
           ]}
           button={{
-            text: "Book Now",            href: "contact"
+            text: "Get Started",            href: "contact"
           }}
           animateOnLoad={true}
         />
@@ -41,17 +41,17 @@ export default function LandingPage() {
 
       <div id="hero" data-section="hero">
         <HeroOverlay
-          title="Premium Barbershop Experience in Your Community"
-          description="At Nathan's Barbershop, we deliver precision cuts, expert styling, and a welcoming atmosphere. Experience professional grooming that sets the standard for quality and service."
-          tag="Your Local Barbershop"
+          title="Build Your Professional Website"
+          description="Create a stunning, high-converting website for your business. No coding required. Affordable pricing for small businesses."
+          tag="Professional Websites"
           tagAnimation="slide-up"
-          imageSrc="http://img.b2bpic.net/free-photo/joyous-coworkers-having-fun-vibrant-office-while-reviewing-financial-graphs_482257-126650.jpg"
-          imageAlt="Professional barbershop environment"
+          imageSrc="https://images.unsplash.com/photo-1460925895917-adf4e565db40?w=1200&q=80"
+          imageAlt="Professional website builder interface"
           textPosition="bottom-left"
           showBlur={true}
           showDimOverlay={false}
           buttons={[
-            { text: "Book Your Appointment", href: "contact" },
+            { text: "Start Free Trial", href: "contact" },
             { text: "Learn More", href: "about" }
           ]}
           buttonAnimation="slide-up"
@@ -60,56 +60,22 @@ export default function LandingPage() {
 
       <div id="about" data-section="about">
         <TextSplitAbout
-          title="About Nathan's Barbershop"
+          title="About CoreScale"
           description={[
-            "Nathan's Barbershop has been a trusted name in professional grooming for years. We specialize in classic barbering techniques combined with modern styling trends.",            "Our experienced barbers are dedicated to providing personalized service to every client. Whether you're looking for a classic fade, detailed lineup, or a complete styling consultation, we've got you covered.",            "We pride ourselves on creating a welcoming atmosphere where every customer feels valued. Visit us today and discover why the community trusts Nathan's for quality grooming and exceptional customer service."
+            "CoreScale is dedicated to empowering small businesses with professional web presence. We believe every business deserves a website that showcases their value.",            "Our platform combines ease of use with powerful features, allowing business owners to create, customize, and launch their websites in hours, not months.",            "Join hundreds of satisfied business owners who have transformed their online presence with CoreScale."
           ]}
-          buttons={[{ text: "Schedule Your Visit", href: "contact" }]}
+          buttons={[{ text: "Explore Features", href: "features" }]}
           buttonAnimation="blur-reveal"
           showBorder={false}
           useInvertedBackground={false}
         />
       </div>
 
-      <div id="services" data-section="services">
-        <PricingCardTwo
-          title="Our Services"
-          description="Professional barbering services tailored to your style and preferences"
-          tag="Services & Pricing"
-          tagAnimation="slide-up"
-          textboxLayout="default"
-          useInvertedBackground={false}
-          animationType="slide-up"
-          plans={[
-            {
-              id: "1",              badge: "Classic Haircut",              badgeIcon: Scissors,
-              price: "$20",              subtitle: "Professional haircut with expert styling",              buttons: [
-                { text: "Book Now", href: "contact" },
-                { text: "Learn More", href: "#" }
-              ],
-              features: [
-                "Expert precision cutting",                "Professional styling",                "Personalized consultation",                "Premium finishing touches",                "Quality grooming experience"
-              ]
-            },
-            {
-              id: "2",              badge: "Beard Service",              badgeIcon: CheckCircle,
-              price: "$15",              subtitle: "Complete beard trimming and shaping",              buttons: [
-                { text: "Book Now", href: "contact" },
-                { text: "Learn More", href: "#" }
-              ],
-              features: [
-                "Precision beard trim",                "Expert shaping and design",                "Hot towel treatment",                "Beard conditioning",                "Professional finishing"
-              ]
-            }
-          ]}
-        />
-      </div>
-
-      <div id="why-matters" data-section="why-matters">
+      <div id="features" data-section="features">
         <FeatureCardThree
-          title="Why Choose Nathan's Barbershop"
-          description="Experience the difference that professional expertise and customer care make"
-          tag="Our Commitment"
+          title="Why CoreScale"
+          description="Everything you need to build and manage your professional website"
+          tag="Features"
           tagAnimation="slide-up"
           textboxLayout="default"
           useInvertedBackground={false}
@@ -117,13 +83,45 @@ export default function LandingPage() {
           gridVariant="three-columns-all-equal-width"
           features={[
             {
-              id: "01",              title: "Expert Craftsmanship",              description: "Our skilled barbers bring years of experience to every cut. We combine traditional barbering techniques with modern style trends to deliver results that exceed expectations.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Expert barbering techniques"
+              id: "01",              title: "Easy to Use",              description: "Intuitive drag-and-drop interface makes it simple to build your website without any technical knowledge.",              imageSrc: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80",              imageAlt: "Easy to use interface"
             },
             {
-              id: "02",              title: "Welcoming Atmosphere",              description: "Step into a space designed for comfort and conversation. Our barbershop is more than a place to get a haircut—it's a community hub where every customer is treated like family.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Comfortable barbershop environment"
+              id: "02",              title: "Professional Templates",              description: "Choose from professionally designed templates optimized for conversions and customer engagement.",              imageSrc: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80",              imageAlt: "Professional templates"
             },
             {
-              id: "03",              title: "Personalized Service",              description: "We listen to what you're looking for and work with you to achieve your ideal look. Every client receives individualized attention and styling recommendations tailored to their needs.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Personalized barbering service"
+              id: "03",              title: "Affordable Pricing",              description: "Transparent pricing plans that scale with your business. No hidden fees or surprise charges.",              imageSrc: "https://images.unsplash.com/photo-1557821552-17105176677c?w=500&q=80",              imageAlt: "Affordable pricing"
+            }
+          ]}
+        />
+      </div>
+
+      <div id="pricing" data-section="pricing">
+        <PricingCardTwo
+          title="Simple, Transparent Pricing"
+          description="Choose the plan that's right for your business"
+          tag="Pricing"
+          tagAnimation="slide-up"
+          textboxLayout="default"
+          useInvertedBackground={false}
+          animationType="slide-up"
+          plans={[
+            {
+              id: "1",              badge: "Starter",              badgeIcon: Sparkles,
+              price: "$19/mo",              subtitle: "Perfect for small businesses getting started",              buttons: [
+                { text: "Get Started", href: "contact" }
+              ],
+              features: [
+                "Up to 5 pages",                "Free domain for 1 year",                "Mobile responsive",                "Basic analytics",                "Email support"
+              ]
+            },
+            {
+              id: "2",              badge: "Professional",              badgeIcon: CheckCircle,
+              price: "$49/mo",              subtitle: "Best for growing businesses",              buttons: [
+                { text: "Get Started", href: "contact" }
+              ],
+              features: [
+                "Unlimited pages",                "Free domain",                "SEO tools",                "Advanced analytics",                "Priority support",                "Email marketing integration"
+              ]
             }
           ]}
         />
@@ -135,10 +133,10 @@ export default function LandingPage() {
             {/* Header */}
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Book Your Appointment
+                Get Started Today
               </h2>
               <p className="text-lg text-foreground/80 mb-8">
-                Ready for a fresh look? Contact Nathan's Barbershop today to schedule your appointment.
+                Join CoreScale and build your professional website in hours.
               </p>
             </div>
 
@@ -149,10 +147,10 @@ export default function LandingPage() {
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Phone</p>
                   <a
-                    href="tel:206-555-0123"
+                    href="tel:1-800-555-0123"
                     className="text-lg font-semibold text-foreground hover:text-primary-cta transition"
                   >
-                    206-555-0123
+                    1-800-555-0123
                   </a>
                 </div>
               </div>
@@ -161,10 +159,10 @@ export default function LandingPage() {
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Email</p>
                   <a
-                    href="mailto:info@nathansbarbershop.com"
+                    href="mailto:support@corescale.com"
                     className="text-lg font-semibold text-foreground hover:text-primary-cta transition"
                   >
-                    info@nathansbarbershop.com
+                    support@corescale.com
                   </a>
                 </div>
               </div>
@@ -202,7 +200,7 @@ export default function LandingPage() {
                     name="phone"
                     required
                     className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                    placeholder="206-555-0123"
+                    placeholder="1-800-555-0123"
                   />
                 </div>
               </div>
@@ -226,18 +224,18 @@ export default function LandingPage() {
                 </div>
                 <div>
                   <label
-                    htmlFor="service"
+                    htmlFor="interest"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Service
+                    I'm interested in
                   </label>
                   <select
-                    id="service"
-                    name="service"
+                    id="interest"
+                    name="interest"
                     className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
                   >
-                    <option>Classic Haircut</option>
-                    <option>Beard Service</option>
+                    <option>Website Builder</option>
+                    <option>E-commerce</option>
                     <option>Both</option>
                   </select>
                 </div>
@@ -248,14 +246,14 @@ export default function LandingPage() {
                   htmlFor="message"
                   className="block text-sm font-medium text-foreground mb-2"
                 >
-                  Additional Notes
+                  Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                  placeholder="Tell us about your preferred style or any special requests..."
+                  placeholder="Tell us about your business..."
                 />
               </div>
 
@@ -263,7 +261,7 @@ export default function LandingPage() {
                 type="submit"
                 className="w-full bg-primary-cta hover:bg-primary-cta/90 text-primary-cta-text font-semibold py-3 px-6 rounded-lg transition"
               >
-                Book Appointment
+                Start Free Trial
               </button>
             </form>
           </div>
@@ -272,9 +270,9 @@ export default function LandingPage() {
 
       <div id="footer" data-section="footer">
         <FooterLogoReveal
-          logoText="Nathan's Barbershop"
+          logoText="CoreScale"
           leftLink={{
-            text: "Hours: Mon-Sat 9AM-6PM, Sun Closed",            href: "#"
+            text: "Privacy Policy",            href: "#"
           }}
           rightLink={{
             text: "Contact Us",            href: "#contact"
