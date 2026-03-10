@@ -7,67 +7,9 @@ import TextSplitAbout from "@/components/sections/about/TextSplitAbout";
 import PricingCardTwo from "@/components/sections/pricing/PricingCardTwo";
 import FeatureCardThree from "@/components/sections/feature/featureCardThree/FeatureCardThree";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
-import { ArrowRight, CheckCircle, Sparkles, Phone, Mail } from "lucide-react";
-import { useState } from "react";
+import { Sparkles, CheckCircle, Phone, Mail, Scissors, Users, Star } from "lucide-react";
 
 export default function LandingPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",    businessName: "",    email: "",    phone: "",    message: ""
-  });
-  const [error, setError] = useState("");
-
-  const handlePhoneClick = () => {
-    window.location.href = "tel:206-741-9017";
-  };
-
-  const handleEmailClick = () => {
-    window.location.href = "mailto:CoreScale.co@gmail.com";
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      // Send email using EmailJS or direct backend call
-      const response = await fetch("/api/send-email", {
-        method: "POST",        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          to: "CoreScale.co@gmail.com",          subject: "New Website Request – CoreScale",          name: formData.fullName,
-          email: formData.email,
-          businessName: formData.businessName,
-          phone: formData.phone,
-          message: formData.message
-        })
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({
-          fullName: "",          businessName: "",          email: "",          phone: "",          message: ""
-        });
-        setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        setError("Failed to send form. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setError("An error occurred. Please try again.");
-    }
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <ThemeProvider
       defaultButtonVariant="directional-hover"
@@ -83,15 +25,15 @@ export default function LandingPage() {
     >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
-          brandName="CoreScale"
+          brandName="Nathan's Barbershop"
           navItems={[
             { name: "About", id: "about" },
             { name: "Services", id: "services" },
-            { name: "Why We Matter", id: "why-matters" },
+            { name: "Why Choose Us", id: "why-matters" },
             { name: "Contact", id: "contact" }
           ]}
           button={{
-            text: "Get Your Website Today",            href: "contact"
+            text: "Book Now",            href: "contact"
           }}
           animateOnLoad={true}
         />
@@ -99,17 +41,17 @@ export default function LandingPage() {
 
       <div id="hero" data-section="hero">
         <HeroOverlay
-          title="Affordable Professional Websites for Small Businesses"
-          description="At CoreScale, we help small and local businesses build a strong online presence with clean, modern websites that attract customers and build trust."
-          tag="Helping Small Businesses Grow Online"
+          title="Premium Barbershop Experience in Your Community"
+          description="At Nathan's Barbershop, we deliver precision cuts, expert styling, and a welcoming atmosphere. Experience professional grooming that sets the standard for quality and service."
+          tag="Your Local Barbershop"
           tagAnimation="slide-up"
           imageSrc="http://img.b2bpic.net/free-photo/joyous-coworkers-having-fun-vibrant-office-while-reviewing-financial-graphs_482257-126650.jpg"
-          imageAlt="Modern professional business workspace"
+          imageAlt="Professional barbershop environment"
           textPosition="bottom-left"
           showBlur={true}
           showDimOverlay={false}
           buttons={[
-            { text: "Get Your Website Today", href: "contact" },
+            { text: "Book Your Appointment", href: "contact" },
             { text: "Learn More", href: "about" }
           ]}
           buttonAnimation="slide-up"
@@ -118,11 +60,11 @@ export default function LandingPage() {
 
       <div id="about" data-section="about">
         <TextSplitAbout
-          title="Why CoreScale?"
+          title="About Nathan's Barbershop"
           description={[
-            "Most customers search online before visiting or contacting a business. Without a website, your business is missing valuable opportunities to connect with potential customers.",            "CoreScale specializes in helping small businesses get online quickly and affordably. We create professional websites that help businesses look credible, showcase their services, and build lasting customer relationships.",            "We focus on clean design, fast performance, and mobile-friendly layouts that work perfectly on any device. Your website will be a powerful tool to attract new customers and establish trust in your market."
+            "Nathan's Barbershop has been a trusted name in professional grooming for years. We specialize in classic barbering techniques combined with modern styling trends.",            "Our experienced barbers are dedicated to providing personalized service to every client. Whether you're looking for a classic fade, detailed lineup, or a complete styling consultation, we've got you covered.",            "We pride ourselves on creating a welcoming atmosphere where every customer feels valued. Visit us today and discover why the community trusts Nathan's for quality grooming and exceptional customer service."
           ]}
-          buttons={[{ text: "Start Your Journey", href: "contact" }]}
+          buttons={[{ text: "Schedule Your Visit", href: "contact" }]}
           buttonAnimation="blur-reveal"
           showBorder={false}
           useInvertedBackground={false}
@@ -132,7 +74,7 @@ export default function LandingPage() {
       <div id="services" data-section="services">
         <PricingCardTwo
           title="Our Services"
-          description="Simple, transparent pricing for professional web solutions tailored to small businesses"
+          description="Professional barbering services tailored to your style and preferences"
           tag="Services & Pricing"
           tagAnimation="slide-up"
           textboxLayout="default"
@@ -140,23 +82,23 @@ export default function LandingPage() {
           animationType="slide-up"
           plans={[
             {
-              id: "1",              badge: "Website Design",              badgeIcon: Sparkles,
-              price: "Starting at $250",              subtitle: "Professional website starting at $250 built to help your business attract more customers online",              buttons: [
-                { text: "Get Started", href: "contact" },
+              id: "1",              badge: "Classic Haircut",              badgeIcon: Scissors,
+              price: "$20",              subtitle: "Professional haircut with expert styling",              buttons: [
+                { text: "Book Now", href: "contact" },
                 { text: "Learn More", href: "#" }
               ],
               features: [
-                "Professional modern design",                "Mobile-friendly layout",                "Fast loading pages",                "Clean and simple user experience",                "Website that builds trust with customers"
+                "Expert precision cutting",                "Professional styling",                "Personalized consultation",                "Premium finishing touches",                "Quality grooming experience"
               ]
             },
             {
-              id: "2",              badge: "Maintenance & Edits",              badgeIcon: CheckCircle,
-              price: "$50/month",              subtitle: "Ongoing support to keep your site fresh",              buttons: [
-                { text: "Add to Service", href: "contact" },
+              id: "2",              badge: "Beard Service",              badgeIcon: CheckCircle,
+              price: "$15",              subtitle: "Complete beard trimming and shaping",              buttons: [
+                { text: "Book Now", href: "contact" },
                 { text: "Learn More", href: "#" }
               ],
               features: [
-                "Website updates and content edits",                "Image or text updates",                "Small design improvements",                "Ongoing technical support",                "Keep your website running smoothly"
+                "Precision beard trim",                "Expert shaping and design",                "Hot towel treatment",                "Beard conditioning",                "Professional finishing"
               ]
             }
           ]}
@@ -165,9 +107,9 @@ export default function LandingPage() {
 
       <div id="why-matters" data-section="why-matters">
         <FeatureCardThree
-          title="Why a Website Matters"
-          description="In today's digital world, a professional online presence is essential for business growth"
-          tag="Business Growth"
+          title="Why Choose Nathan's Barbershop"
+          description="Experience the difference that professional expertise and customer care make"
+          tag="Our Commitment"
           tagAnimation="slide-up"
           textboxLayout="default"
           useInvertedBackground={false}
@@ -175,13 +117,13 @@ export default function LandingPage() {
           gridVariant="three-columns-all-equal-width"
           features={[
             {
-              id: "01",              title: "Build Trust & Credibility",              description: "A professional website shows customers that you're legitimate and serious about your business. It's often the first impression customers have of your company.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Professional website design"
+              id: "01",              title: "Expert Craftsmanship",              description: "Our skilled barbers bring years of experience to every cut. We combine traditional barbering techniques with modern style trends to deliver results that exceed expectations.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Expert barbering techniques"
             },
             {
-              id: "02",              title: "Attract More Customers",              description: "When customers search online for services you offer, a well-designed website helps them find you. Don't miss out on valuable business opportunities.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Customer attraction through online presence"
+              id: "02",              title: "Welcoming Atmosphere",              description: "Step into a space designed for comfort and conversation. Our barbershop is more than a place to get a haircut—it's a community hub where every customer is treated like family.",              imageSrc: "http://img.b2bpic.net/free-photo/website-construction-error-concept_53876-132306.jpg",              imageAlt: "Comfortable barbershop environment"
             },
             {
-              id: "03",              title: "Stand Out from Competitors",              description: "Many local businesses still don't have websites. By getting online with CoreScale, you'll have a competitive advantage and reach customers your competitors are missing.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Competitive advantage online"
+              id: "03",              title: "Personalized Service",              description: "We listen to what you're looking for and work with you to achieve your ideal look. Every client receives individualized attention and styling recommendations tailored to their needs.",              imageSrc: "http://img.b2bpic.net/free-photo/group-people-working-website-template_53876-25068.jpg",              imageAlt: "Personalized barbering service"
             }
           ]}
         />
@@ -193,10 +135,10 @@ export default function LandingPage() {
             {/* Header */}
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Get Your Website Started
+                Book Your Appointment
               </h2>
               <p className="text-lg text-foreground/80 mb-8">
-                Ready to grow your business online? Contact CoreScale today to get your professional website built quickly and affordably.
+                Ready for a fresh look? Contact Nathan's Barbershop today to schedule your appointment.
               </p>
             </div>
 
@@ -207,10 +149,10 @@ export default function LandingPage() {
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Phone</p>
                   <a
-                    href="tel:206-741-9017"
+                    href="tel:206-555-0123"
                     className="text-lg font-semibold text-foreground hover:text-primary-cta transition"
                   >
-                    206-741-9017
+                    206-555-0123
                   </a>
                 </div>
               </div>
@@ -219,149 +161,123 @@ export default function LandingPage() {
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Email</p>
                   <a
-                    href="mailto:CoreScale.co@gmail.com"
+                    href="mailto:info@nathansbarbershop.com"
                     className="text-lg font-semibold text-foreground hover:text-primary-cta transition"
                   >
-                    CoreScale.co@gmail.com
+                    info@nathansbarbershop.com
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            {!submitted ? (
-              <form onSubmit={handleFormSubmit} className="bg-card p-8 rounded-lg">
-                {error && (
-                  <div className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200">
-                    <p className="text-red-800">{error}</p>
-                  </div>
-                )}
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label
-                      htmlFor="fullName"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="businessName"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Business Name
-                    </label>
-                    <input
-                      type="text"
-                      id="businessName"
-                      name="businessName"
-                      value={formData.businessName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                      placeholder="Your Business"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                      placeholder="206-741-9017"
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-6">
+            <form className="bg-card p-8 rounded-lg">
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
                   <label
-                    htmlFor="message"
+                    htmlFor="fullName"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Message
+                    Full Name
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
                     required
-                    rows={5}
                     className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
-                    placeholder="Tell us about your business and what you're looking for in a website..."
+                    placeholder="John Doe"
                   />
                 </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-primary-cta hover:bg-primary-cta/90 text-primary-cta-text font-semibold py-3 px-6 rounded-lg transition"
-                >
-                  Request Website
-                </button>
-              </form>
-            ) : (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-                <p className="text-lg font-semibold text-green-800 mb-2">
-                  Thank you for contacting CoreScale. We will reach out to you shortly.
-                </p>
-                <p className="text-green-700">
-                  We've received your website request and will be in touch soon to discuss your project.
-                </p>
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
+                    placeholder="206-555-0123"
+                  />
+                </div>
               </div>
-            )}
+
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="service"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Service
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
+                  >
+                    <option>Classic Haircut</option>
+                    <option>Beard Service</option>
+                    <option>Both</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
+                  Additional Notes
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  className="w-full px-4 py-2 rounded-lg border border-accent bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary-cta"
+                  placeholder="Tell us about your preferred style or any special requests..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-primary-cta hover:bg-primary-cta/90 text-primary-cta-text font-semibold py-3 px-6 rounded-lg transition"
+              >
+                Book Appointment
+              </button>
+            </form>
           </div>
         </section>
       </div>
 
       <div id="footer" data-section="footer">
         <FooterLogoReveal
-          logoText="CoreScale"
+          logoText="Nathan's Barbershop"
           leftLink={{
-            text: "Privacy Policy",            href: "#"
+            text: "Hours: Mon-Sat 9AM-6PM, Sun Closed",            href: "#"
           }}
           rightLink={{
-            text: "Terms of Service",            href: "#"
+            text: "Contact Us",            href: "#contact"
           }}
         />
       </div>
